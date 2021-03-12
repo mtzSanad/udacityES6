@@ -25,4 +25,42 @@ Is there any reason to use var anymore? Not really.
 
 There are some arguments that can be made for using var in situations where you want to globally define variables, but this is often considered bad practice and should be avoided. From now on, we suggest ditching var in place of using let and const.
 
+## Template literals
 
+Prior to ES6, the old way to concatenate strings together was by using the string concatenation operator ( + )
+
+```javascript
+    const student = {
+    name: 'Richard Kalehoff',
+    guardian: 'Mr. Kalehoff'
+    };
+
+    const teacher = {
+    name: 'Mrs. Wilson',
+    room: 'N231'
+    }
+
+    let message = student.name + ' please see ' + teacher.name + ' in ' + teacher.room + ' to pick up your report card.';
+```
+
+This works alright, but it gets more complicated when you need to build multi-line strings.
+
+```javascript
+    let note = teacher.name + ',\n\n' +
+    'Please excuse ' + student.name + '.\n' +
+    'He is recovering from the flu.\n\n' +
+    'Thank you,\n' +
+    student.guardian;
+```
+
+** NOTE ** : As an alternative to using the string concatenation operator ( + ), you can use the String's concat() method, but both options are rather clunky for simulating true string interpolation.
+
+Template literals are essentially string literals that include embedded expressions.
+
+Denoted with backticks (` `) instead of single quotes ( '' ) or double quotes ( "" ), template literals can contain placeholders which are represented using ${expression}. This makes it much easier to build strings.
+
+Here's the previous examples using template literals. Also note you can write the previous multi line example without \n
+
+```javascript
+    let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
+```

@@ -844,7 +844,7 @@ myMaple.gatherSyrup();
 myMaple.changeSeason('spring');
 ```
 
-** super must be called before this **
+**super must be called before this**
 
 ```javascript
  class Apple {}

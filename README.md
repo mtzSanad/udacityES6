@@ -64,3 +64,50 @@ Here's the previous examples using template literals. Also note you can write th
 ```javascript
     let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
 ```
+
+## Destructing
+
+In ES6, you can extract data from arrays and objects into distinct variables using destructuring.
+
+Before ES6 you would do the following
+```javascript
+    const point = [10, 25, -34];
+
+    const x = point[0];
+    const y = point[1];
+    const z = point[2];
+
+    console.log(x, y, z);
+
+    const gemstone = {
+    type: 'quartz',
+    color: 'rose',
+    carat: 21.29
+    };
+
+    const type = gemstone.type;
+    const color = gemstone.color;
+    const carat = gemstone.carat;
+
+    console.log(type, color, carat);
+```
+
+Destructuring borrows inspiration from languages like Perl and Python by allowing you to specify the elements you want to extract from an array or object on the left side of an assignment. It sounds a little weird, but you can actually achieve the same result as before, but with much less code; and it's still easy to understand.
+
+With ES6 destructing
+
+```javascript
+    const point = [10, 25, -34];
+    const [x,y,z] = point;
+    console.log(x, y, z);
+
+    const gemstone = {
+    type: 'quartz',
+    color: 'rose',
+    carat: 21.29
+    };
+    const {type, color, carat} = gemstone;
+    console.log(type, color, carat);
+```
+
+More examples https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
